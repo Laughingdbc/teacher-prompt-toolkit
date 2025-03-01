@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Prompt Toolkit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Teacher Prompt Toolkit</h1>
+            <p class="subtitle">Discover, copy, and use AI prompts designed specifically for K-8 educators. Boost your classroom efficiency and creativity with these ready-to-use templates.</p>
+        </div>
+    </header>
+    
+    <main>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="prompt-count">40</div>
+                <div class="stat-label">AI Prompts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">9</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="prompts-used">0</div>
+                <div class="stat-label">Prompts Used</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="achievement-count">0/10</div>
+                <div class="stat-label">Achievements</div>
+            </div>
+        </div>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search for prompts...">
+            </div>
+            <select class="filter-dropdown" id="sort-dropdown">
+                <option value="newest">Newest First</option>
+                <option value="popular">Most Popular</option>
+                <option value="easiest">Easiest First</option>
+                <option value="hardest">Hardest First</option>
+            </select>
+        </div>
+        
+        <div class="category-filters">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="writing">Writing</button>
+            <button class="category-btn" data-category="grammar">Grammar</button>
+            <button class="category-btn" data-category="vocabulary">Vocabulary</button>
+            <button class="category-btn" data-category="reading">Reading</button>
+            <button class="category-btn" data-category="differentiation">Differentiation</button>
+            <button class="category-btn" data-category="assessment">Assessment</button>
+            <button class="category-btn" data-category="management">Management</button>
+            <button class="category-btn" data-category="parent">Parent Comm</button>
+            <button class="category-btn" data-category="technology">Technology</button>
+        </div>
+        
+        <div class="grade-filters">
+            <button class="grade-btn active" data-grade="all">All Grades</button>
+            <button class="grade-btn k-2" data-grade="K-2">K-2</button>
+            <button class="grade-btn k-5" data-grade="K-5">K-5</button>
+            <button class="grade-btn g3-5" data-grade="3-5">3-5</button>
+            <button class="grade-btn g3-8" data-grade="3-8">3-8</button>
+            <button class="grade-btn k-8" data-grade="K-8">K-8</button>
+        </div>
+        
+        <div class="cards-container" id="cards-container">
+            <!-- Cards will be added here dynamically -->
+        </div>
+        
+        <div class="no-results" id="no-results" style="display: none;">
+            <h3>No prompts found</h3>
+            <p>Try adjusting your search or filters to find what you're looking for.</p>
+        </div>
+    </main>
+    
+    <div class="progress-container" id="progress-container">
+        <div class="progress-circle">
+            <svg class="progress-ring" width="70" height="70">
+                <circle class="progress-ring-circle" id="progress-ring-circle"></circle>
+            </svg>
+            <div class="progress-text" id="progress-text">0%</div>
+        </div>
+        <div class="progress-label">Your Progress</div>
+    </div>
+    
+    <div class="copied-toast" id="copied-toast">Prompt copied! ✅</div>
+    
+    <div class="modal" id="achievements-modal">
+        <div class="modal-content">
+            <button class="close-btn" id="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Your Achievements</h2>
+                <p>Collect all achievements by using different prompts and categories!</p>
+            </div>
+            <div class="achievements-grid" id="achievements-grid">
+                <!-- Achievements will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
